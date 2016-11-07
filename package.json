@@ -1,6 +1,6 @@
 {
   "name": "date-ideas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "\"Date idea generator\"",
   "main": "index.js",
   "scripts": {
@@ -9,18 +9,19 @@
   "author": "jmbeach",
   "license": "MIT",
   "dependencies": {
+    "path": "^0.12.7",
     "sqlite3": "^3.1.8"
   },
-	"bin": {
-		"date-ideas": "./index.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/jmbeach/date-ideas.git"
-	},
-	"keywords": [
-		"dates",
-		"dating",
-		"romantic"
-	]
+  "bin": {
+    "date-ideas": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmbeach/date-ideas.git"
+  },
+  "keywords": [
+    "dates",
+    "dating",
+    "romantic"
+  ]
 }
