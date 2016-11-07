@@ -2,12 +2,25 @@
 
 This is a simple command line application which spits out date ideas.
 
+## Instalation
+
+```
+npm install date-ideas -g
+```
+
 ## Usage
 
 ```
 >user$ date-ideas
 >Go swimming.
 ```
+
+## Contributing
+
++ Clone the project
++ Take a look at index.js. Right now everything happens in there
++ Try to implement some of the goals. 
+	+ Biggest/easiest way to contribute right now is submitting date ideas by adding rows to the Idea table in the sqlite `ideas.db` database.
 
 ## Goals
 
