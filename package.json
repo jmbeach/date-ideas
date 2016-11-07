@@ -18,9 +18,9 @@
 		"type": "git",
 		"url": "https://github.com/jmbeach/date-ideas.git"
 	},
-	"keywords": {
+	"keywords": [
 		"dates",
 		"dating",
 		"romantic"
-	}
+	]
 }
