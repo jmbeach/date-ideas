@@ -13,5 +13,14 @@
   },
 	"bin": {
 		"date-ideas": "./index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jmbeach/date-ideas.git"
+	},
+	"keywords": {
+		"dates",
+		"dating",
+		"romantic"
 	}
 }
