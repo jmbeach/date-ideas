@@ -16,7 +16,6 @@ module.exports.randomIdea = function(callback) {
   			return;
   		}
   		var idea = rows[getRandomInt(0, rows.length-1)];
-  		console.log(idea.Description);
       callback(null, idea);
   	});
   });
