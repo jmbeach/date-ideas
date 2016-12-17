@@ -13,7 +13,7 @@
     "sqlite3": "^3.1.8"
   },
   "bin": {
-    "date-ideas": "./index.js"
+    "date-ideas": "./app.js"
   },
   "repository": {
     "type": "git",
