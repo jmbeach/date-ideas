@@ -1,26 +1,13 @@
 #!/usr/bin/env node
 
 // imports
-var path = require('path')
 var util = require('util')
-var sqlite3 = require('sqlite3').verbose()
+var dateIdeas = require('./index.js')
 
-function getRandomInt (min, max) {
-  return Math.floor(Math.random() * (max - min)) + min
-}
-
-var db = new sqlite3.Database(path.join(__dirname, 'ideas.db'), sqlite3.OPEN_READONLY, function (err) {
+dateIdeas.randomIdea(function (err, idea) {
   if (err) {
-    console.log(err)
-    return
+    console.log(util.format('Err: %s', err))
+    process.exit(1)
   }
-  db.all('SELECT * from DateIdea', function (errSelect, rows) {
-    if (errSelect) {
-      console.log('Something went wrong selecting ideas from database')
-      console.log(errSelect)
-      return
-    }
-    var idea = rows[getRandomInt(0, rows.length - 1)]
-    console.log(util.format('%s: %s', idea.Name, idea.Description))
-  })
+  console.log(util.format('%s: %s', idea.Name, idea.Description))
 })
