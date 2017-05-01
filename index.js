@@ -1,23 +1,24 @@
 var path = require('path')
-var sqlite3 = require('sqlite3').verbose()
+var Sequelize = require('Sequelize')
+var Model = require('./lib/models/Model.js')
+
+var sequelize = new Sequelize(null, null, null, {
+  dialect: 'sqlite',
+  storage: path.join(__dirname, 'ideas.db'),
+  logging: false
+})
+var models = Model.create(sequelize)
+
 function getRandomInt (min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
 function randomIdea (callback) {
-  var db = new sqlite3.Database(path.join(__dirname, 'ideas.db'), sqlite3.OPEN_READONLY, function (err) {
-    if (err) {
-      callback(err)
-      return
-    }
-    db.all('SELECT * from DateIdea', function (errSelect, rows) {
-      if (errSelect) {
-        callback(errSelect)
-        return
-      }
-      var idea = rows[getRandomInt(0, rows.length - 1)]
-      callback(null, idea)
-    })
+  models.DateIdea.findAndCountAll({
+    include: [models.Setting, models.PriceRange, models.Category]
+  }).then(function (result) {
+    var selectedIndex = getRandomInt(0, result.count - 1)
+    callback(null, result.rows[selectedIndex])
   })
 }
 module.exports.randomIdea = randomIdea
