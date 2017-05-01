@@ -1,5 +1,5 @@
 var path = require('path')
-var Sequelize = require('Sequelize')
+var Sequelize = require('sequelize')
 var Model = require('./lib/models/Model.js')
 
 var sequelize = new Sequelize(null, null, null, {
