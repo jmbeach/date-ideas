@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "path": "^0.12.7",
-    "sequelize": "^3.30.4",
+    "sequelize": "^5.15.1",
     "sqlite3": "^5.0.0"
   },
   "bin": {
